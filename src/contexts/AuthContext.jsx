@@ -6,10 +6,17 @@ const AuthContext = createContext({
     user: null,
     updateProfile: () => {},
     logout: () => {},
+    setToken: () => {}, // Add setToken to context
 });
 
 const AuthContextProvider = ({ children }) => {
-    const [token, setToken] = useState(localStorage.getItem("token"));
+    const [token, setToken] = useState(() => {
+        const savedToken = localStorage.getItem("token");
+        // Only return the token if it's not null, undefined, or empty string
+        const validToken = savedToken && savedToken !== "null" && savedToken !== "undefined" ? savedToken : null;
+        console.log("AuthContext: Initializing token from localStorage:", { savedToken, validToken });
+        return validToken;
+    });
     const [profile, setProfile] = useState(() => {
         const savedProfile = localStorage.getItem("userProfile");
         return savedProfile ? JSON.parse(savedProfile) : null;
@@ -17,22 +24,26 @@ const AuthContextProvider = ({ children }) => {
     const navigate = useNavigate();
 
     const logout = () => {
+        console.log("AuthContext: Logging out, clearing token and profile");
         setToken(null);
         setProfile(null);
         navigate('/?type=all');
     }
 
     useEffect(() => {
-        if (token) {
+        console.log("AuthContext: Token changed:", token);
+        if (token && token !== "null" && token !== "undefined") {
             localStorage.setItem("token", token);
+            console.log("AuthContext: Token saved to localStorage:", token);
         } else {
             localStorage.removeItem("token");
             localStorage.removeItem("userProfile");
+            console.log("AuthContext: Token and profile removed from localStorage");
         }
     }, [token]);
 
     useEffect(() => {
-        if (token) {
+        if (token && token !== "null" && token !== "undefined") {
             const interval = setInterval(() => {
                 fetch('https://delightmyanmar99.pro/api/user', {
                     headers: {
@@ -78,6 +89,7 @@ const AuthContextProvider = ({ children }) => {
     }, [token]);
 
     const updateProfile = (newProfile) => {
+        console.log("AuthContext: Updating profile:", newProfile);
         setProfile(newProfile);
         if (newProfile) {
             localStorage.setItem("userProfile", JSON.stringify(newProfile));
@@ -91,6 +103,7 @@ const AuthContextProvider = ({ children }) => {
         user: profile,
         updateProfile,
         logout,
+        setToken, // Expose setToken to context consumers
     }), [token, profile]);
 
     return (

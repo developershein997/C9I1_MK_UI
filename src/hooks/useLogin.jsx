@@ -5,22 +5,26 @@ import { message } from 'antd';
 import { AuthContext } from '../contexts/AuthContext';
 
 const useLogin = () => {
-    const { updateProfile } = useContext(AuthContext);
+    const { updateProfile, setToken } = useContext(AuthContext);
     const [error, setError] = useState();
     const [errMsg, setErrMsg] = useState();
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     const login = async (url, inputData) => {
+        console.log("useLogin: Starting login process for:", url);
         setLoading(true);
         try {
             const res = await axios.post(url, inputData);
+            console.log("useLogin: Login response:", res.data);
             if (res.status === 200) {
                 setError(null);
                 setErrMsg(null);
                 setLoading(false);
                 const { token, user } = res.data.data;
-                localStorage.setItem('token', token);
+                console.log("useLogin: Setting token:", token);
+                console.log("useLogin: Setting user profile:", user);
+                setToken(token); // Use context setToken instead of localStorage
                 updateProfile(user);
                 
                 navigate('/?type=all');
@@ -28,6 +32,7 @@ const useLogin = () => {
                 return user;
             }
         } catch (e) {
+            console.error("useLogin: Login error:", e);
             setLoading(false);
             if (e.response && e.response.data) {
                 setError(e.response.data.errors);

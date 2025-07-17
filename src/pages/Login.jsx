@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import { EyeIcon, EyeOffIcon } from 'lucide-react';
 import useLogin from "../hooks/useLogin"; // Original import restored
 import BASE_URL from '../hooks/baseUrl'; // Original import restored
+import logo from "../assets/img/logo/mk_logo.png";
 import { LanguageContext } from "../contexts/LanguageContext"; // Original import restored
 
 const Login = ({ show, handleClose }) => {
@@ -49,7 +50,7 @@ const Login = ({ show, handleClose }) => {
         {/* Logo and Title */}
         <div className="text-center mb-6">
           {/* Assuming logo.png is in the public/images folder or accessible via a direct URL */}
-          <img src={'./images/your_name_logo.png'} width={220} alt="logo" className="mx-auto mb-3" />
+          <img src={logo} width={220} alt="logo" className="mx-auto mb-3" />
           <h4 className="text-[#FFD700] font-bold text-2xl">{content?.auth?.login.toUpperCase()}</h4>
         </div>
 
