@@ -34,7 +34,7 @@ const GameTabsLg = () => {
   } = useContext(GameContext);
   // const gameProvider = providers && providers.find((p) => p?.code == provider)?.id;
 
-  // const providerUrl = https://delightmyanmar99.pro/api/providers/
+  // const providerUrl = https://moneyking77.online/api/providers/
 
   const baseImageMap = {
     1: "/images/Final_All/Slot/SlotPng.png",

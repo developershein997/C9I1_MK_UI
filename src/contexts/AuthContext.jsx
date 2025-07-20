@@ -45,7 +45,7 @@ const AuthContextProvider = ({ children }) => {
     useEffect(() => {
         if (token && token !== "null" && token !== "undefined") {
             const interval = setInterval(() => {
-                fetch('https://delightmyanmar99.pro/api/user', {
+                fetch('https://moneyking77.online/api/user', {
                     headers: {
                         'Authorization': `Bearer ${token}`,
                         'Accept': 'application/json',

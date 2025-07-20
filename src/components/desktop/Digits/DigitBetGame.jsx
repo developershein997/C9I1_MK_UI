@@ -31,7 +31,7 @@ const digitImages = [
 function useUser() {
   const [user, setUser] = useState(null);
   useEffect(() => {
-    fetch('https://delightmyanmar99.pro/api/user', {
+    fetch('https://moneyking77.online/api/api/user', {
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('token'),
         'Accept': 'application/json'
@@ -126,7 +126,7 @@ export default function DigitBetGame() {
   const handleRollRef = useRef();
 
   useEffect(() => {
-    fetch('https://delightmyanmar99.pro/api/digitbet/history', {
+    fetch('https://moneyking77.online/api/digitbet/history', {
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('token'),
         'Accept': 'application/json'
@@ -177,7 +177,7 @@ export default function DigitBetGame() {
         multiplier: betMultiplier
       };
 
-      const response = await fetch('https://delightmyanmar99.pro/api/digitbet', {
+      const response = await fetch('https://moneyking77.online/api/digitbet', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -202,7 +202,7 @@ export default function DigitBetGame() {
       } else {
         setApiResponseMessage(`❌ ${data.message}`);
         // If there's an error, refresh history separately
-        fetch('https://delightmyanmar99.pro/api/digitbet/history', {
+        fetch('https://moneyking77.online/api/digitbet/history', {
           headers: {
             'Authorization': 'Bearer ' + localStorage.getItem('token'),
             'Accept': 'application/json'
