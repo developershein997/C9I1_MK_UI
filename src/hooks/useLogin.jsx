@@ -29,6 +29,7 @@ const useLogin = () => {
                 
                 navigate('/?type=all');
                 message.success('Logged In Successfully.');
+                console.log('user',user)
                 return user;
             }
         } catch (e) {

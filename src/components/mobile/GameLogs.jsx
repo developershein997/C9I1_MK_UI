@@ -36,22 +36,23 @@ export default function GameLogs() {
       </h2>
       <p className="text-gray-300 text-center mb-4">Track your gaming activity and performance across different time periods</p>
       {/* Date Filter Buttons in a Row */}
-      <div className="flex flex-row flex-wrap items-center justify-center gap-4 mb-10">
-        {dateFilters.map((filter) => (
-          <button
-            key={filter.key}
-            onClick={() => setSelectedDate(filter.key)}
-            className={`flex items-center gap-2 min-w-[110px] px-5 py-2.5 rounded-xl font-semibold text-base transition-all duration-300 focus:outline-none border-2 border-transparent hover:scale-105 hover:shadow-lg ${
-              selectedDate === filter.key
-                ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-black shadow-lg'
-                : 'bg-gradient-to-br from-[#181A29] to-[#1f2338] text-white border border-gray-700/50 hover:border-yellow-400/50 hover:bg-[#1f2338]'
-            }`}
-          >
-            <span className="text-lg">{filter.icon}</span>
-            <span>{filter.label}</span>
-          </button>
-        ))}
-      </div>
+        <div className="flex flex-row flex-nowrap overflow-x-auto items-center justify-start gap-2 mb-6 px-4 scrollbar-hide">
+            {dateFilters.map((filter) => (
+                <button
+                    key={filter.key}
+                    onClick={() => setSelectedDate(filter.key)}
+                    className={`flex items-center gap-1 min-w-[100px] px-3 py-1.5 rounded-lg font-medium text-sm transition-all duration-300 focus:outline-none border-2 border-transparent hover:scale-105 hover:shadow ${
+                        selectedDate === filter.key
+                            ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-black shadow-md'
+                            : 'bg-[#1f2338] text-white border border-gray-600 hover:border-yellow-400/50 hover:bg-[#2a2e45]'
+                    } whitespace-nowrap`}
+                >
+                    <span className="text-base">{filter.icon}</span>
+                    <span>{filter.label}</span>
+                </button>
+            ))}
+        </div>
+
       {/* Game Logs Table (always visible, responsive) */}
       <div className="overflow-x-auto rounded-2xl border border-gray-700 bg-white/5 shadow-lg">
         {(!logs || logs.length === 0) ? (

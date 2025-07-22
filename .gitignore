@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
+mk_build_C9I1
 
 # Editor directories and files
 .vscode/*

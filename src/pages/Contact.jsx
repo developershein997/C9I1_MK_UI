@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import logo from '../assets/img/logo_red.png'
+
 import tele from '../assets/img/tele.png'
 import viber from '../assets/img/viber.png'
 import fb from '../assets/img/fb.png'
@@ -105,7 +105,7 @@ const ContactPage = () => {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-shrink-0">
               <img 
-                src={logo} 
+                src="public/images/logo-P-jbhPrl.png"
                 alt="Company Logo" 
                 className="w-32 h-32 md:w-40 md:h-40 object-contain filter drop-shadow-lg"
               />

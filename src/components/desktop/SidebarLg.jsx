@@ -36,14 +36,16 @@ const SidebarLg = ({ show, onClose }) => {
   const { data } = useFetch(BASE_URL + "/contact");
   const contacts = data?.map((contact) => ({
     ...contact, // Copy existing object properties
-    image: contact.name == "Viber"
-      ? viber
-      : contact.name == "Telegram"
-        ? tele
-        : contact.name == "Facebook"
-          ? fb
-          : null, // Default to null if no condition matches
+    // image: contact.name == "Viber"
+    //   ? viber
+    //   : contact.name == "Telegram"
+    //     ? tele
+    //     : contact.name == "Facebook"
+    //       ? fb
+    //       : null, // Default to null if no condition matches
   }));
+
+  console.log("contacts",contacts);
 
   const { logout, loading } = useLogout();
   const handleLogout = async (e) => {
@@ -112,11 +114,15 @@ const SidebarLg = ({ show, onClose }) => {
               </Link>
             ))}
           </div>
-          <div className="flex justify-center gap-4 mt-6 mb-8">
+          <div className="grid grid-cols-2 gap-4 mt-3 mb-3 justify-items-center">
             {contacts && contacts.map((contact, index) => (
-              <Link to={contact.link} key={index} onClick={onClose}>
-                <img src={contact.image} className="rounded-lg w-12 h-12" alt={contact.name} />
-              </Link>
+                <Link to="/contact" key={index} onClick={onClose}>
+                  <img
+                      src={`https://moneyking77.online/api/../${contact.image}`}
+                      className="rounded-lg w-12 h-12"
+                      alt={contact.name}
+                  />
+                </Link>
             ))}
           </div>
           <div className="flex justify-center my-4">
@@ -124,15 +130,25 @@ const SidebarLg = ({ show, onClose }) => {
               Download App
             </a>
           </div>
+
+          <button
+              onClick={handleLogout}
+              className="w-full py-4 bg-red-600 hover:bg-red-700 text-white font-bold text-lg rounded-b-xl transition-colors mt-auto mb-10"
+          >
+            {loading ? <span className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></span> : null}
+            {content?.profile?.logout?.toUpperCase()}
+          </button>
         </div>
         {/* Sticky Logout Button at the bottom */}
-        <button
-          onClick={handleLogout}
-          className="w-full py-4 bg-red-600 hover:bg-red-700 text-white font-bold text-lg rounded-b-xl transition-colors mt-auto"
-        >
-          {loading ? <span className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></span> : null}
-          {content?.profile?.logout?.toUpperCase()}
-        </button>
+        {/*<button*/}
+        {/*  onClick={handleLogout}*/}
+        {/*  className="w-full py-4 bg-red-600 hover:bg-red-700 text-white font-bold text-lg rounded-b-xl transition-colors mt-auto"*/}
+        {/*>*/}
+        {/*  {loading ? <span className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></span> : null}*/}
+        {/*  {content?.profile?.logout?.toUpperCase()}*/}
+        {/*</button>*/}
+
+
       </div>
     </>
   )

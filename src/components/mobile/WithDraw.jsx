@@ -24,9 +24,11 @@ const WithDraw = () => {
     let inputData = { payment_type_id: payment, account_name, account_number, amount, password };
     let method = "POST";
     let redirect = "/information?tab=logs&type=withdraw";
-    let msg = "Withdraw Success";
+    let msg = "Withdraw successfully";
     await inputSubmit(url, inputData, method, redirect, msg);
   }
+
+
 
   return (
     <div>
