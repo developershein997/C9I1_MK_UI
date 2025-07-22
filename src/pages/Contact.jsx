@@ -105,7 +105,7 @@ const ContactPage = () => {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-shrink-0">
               <img 
-                src="../../public/images/logo-P-jbhPrl.png"
+                src="/images/logo-P-jbhPrl.png"
                 alt="Company Logo" 
                 className="w-32 h-32 md:w-40 md:h-40 object-contain filter drop-shadow-lg"
               />
