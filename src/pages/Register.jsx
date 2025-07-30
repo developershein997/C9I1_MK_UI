@@ -136,6 +136,7 @@ import { LanguageContext } from '../contexts/LanguageContext';
 import useRegister from "../hooks/useRegister";
 import BASE_URL from '../hooks/baseUrl';
 import { Spinner } from 'react-bootstrap';
+import logo from "../assets/img/logo/mk_logo.png";
 // import logo from "./images/logo-P-jbhPrl.png";
 
 const Register = ({ show, onClose }) => {
@@ -186,9 +187,9 @@ const Register = ({ show, onClose }) => {
             color: '#bbb'
           }}>&times;</button>
         </div>
-        <div className='text-center mb-3'>
-          <img src={'./images/your_name_logo.png'} width={150} alt="Logo" />
-          <h2 style={{ color: '#FFD700', fontWeight: 'bold' }}>{content?.auth?.register.toUpperCase()}</h2>
+        <div className=' mb-3  '>
+          <img src={logo} width={150} alt="Logo" className='mx-auto' />
+          <h2 style={{ color: '#FFD700', fontWeight: 'bold' }} className='text-center'>{content?.auth?.register.toUpperCase()}</h2>
         </div>
 
         <form onSubmit={handleRegister}>

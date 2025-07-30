@@ -26,7 +26,7 @@ const useLogin = () => {
                 console.log("useLogin: Setting user profile:", user);
                 setToken(token); // Use context setToken instead of localStorage
                 updateProfile(user);
-                
+                window.location.reload();
                 navigate('/?type=all');
                 message.success('Logged In Successfully.');
                 console.log('user',user)

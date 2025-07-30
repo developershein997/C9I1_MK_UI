@@ -150,29 +150,39 @@ const Profile = () => {
         </div>
       )}
       {/* Profile Info */}
-      <form className="bg-white/10 backdrop-blur-sm px-3 py-4 rounded-2xl border border-white/20 mb-4">
-        <div className="flex justify-between">
-          <h5 className="font-bold mb-3 text-white">{content?.profile?.my_profile}</h5>
-        </div>
-        <div className="grid grid-cols-12 mb-2">
-          <div className="col-span-5 mt-2 text-gray-300 font-medium">{content?.profile?.username} : </div>
-          <div className="col-span-7">
-            <span className="text-white">{user?.user_name}</span>
-          </div>
-        </div>
-        <div className="grid grid-cols-12 mb-2">
-          <div className="col-span-5 mt-2 text-gray-300 font-medium">{content?.profile?.full_name} : </div>
-          <div className="col-span-7">
-            <span className="text-white">{user?.name}</span>
-          </div>
-        </div>
-        <div className="grid grid-cols-12 mb-2">
-          <div className="col-span-5 mt-2 text-gray-300 font-medium">{content?.profile?.phone} : </div>
-          <div className="col-span-7">
-            <span className="text-white">{user?.phone ?? ""}</span>
-          </div>
-        </div>
-      </form>
+     <form className="bg-white/10 backdrop-blur-sm px-4 py-5 rounded-2xl border border-white/20 mb-4">
+  <div className="flex justify-between items-center mb-4">
+    <h5 className="font-bold text-white text-lg">
+      {content?.profile?.my_profile}
+    </h5>
+  </div>
+
+  <div className="grid grid-cols-12 gap-y-3 text-sm">
+    {/* Username */}
+    <div className="col-span-5 text-gray-300 font-medium">
+      {content?.profile?.username} :
+    </div>
+    <div className="col-span-7 text-white">
+      {user?.user_name}
+    </div>
+
+    {/* Full Name */}
+    <div className="col-span-5 text-gray-300 font-medium">
+      {content?.profile?.full_name} :
+    </div>
+    <div className="col-span-7 text-white">
+      {user?.name}
+    </div>
+
+    {/* Phone */}
+    <div className="col-span-5 text-gray-300 font-medium">
+      {content?.profile?.phone} :
+    </div>
+    <div className="col-span-7 text-white">
+      {user?.phone ?? ""}
+    </div>
+  </div>
+</form>
       {/* Change Password Form */}
       <ChangePassword />
     </div>

@@ -66,13 +66,13 @@ const Deposit = () => {
                 <div>
                   <img
                     className="rounded-lg shadow w-12 h-12 object-cover"
-                    src={"https://ponewine20x.xyz" + selectedBank.image}
+                    src={"https://moneyking77.online/api/../" + selectedBank.img}
                     alt={selectedBank.payment_type}
                   />
                 </div>
                 <div className="ml-3">
-                  <h6 className="font-bold text-white">{selectedBank.payment_type}</h6>
-                  <h6 className="font-bold text-white">{selectedBank.account_number}</h6>
+                  <h6 className="font-bold text-white">{selectedBank.name}</h6>
+                  <h6 className="font-bold text-white">{selectedBank.no}</h6>
                 </div>
               </div>
               <div>
@@ -131,10 +131,10 @@ const Deposit = () => {
                   setShow(false);
                   setSelectedBank(bank);
                 }} className="flex gap-2 bg-gray-100 hover:bg-yellow-100 cursor-pointer p-2 rounded-lg text-black items-center">
-                  <img src={"https://ponewine20x.xyz" + bank.image} className="w-10 h-10 rounded-md object-cover" alt="bank" />
+                  <img src={"https://moneyking77.online/api/../" + bank.img} className="w-10 h-10 rounded-md object-cover" alt="bank" />
                   <div>
-                    <p className="text-xs">{content?.wallet?.account} : {bank.account_number}</p>
-                    <p className="text-xs">{content?.wallet?.account_name} : {bank.account_name}</p>
+                    <p className="text-xs">{content?.wallet?.account} : {bank.no}</p>
+                    <p className="text-xs">{content?.wallet?.account_name} : {bank.name}</p>
                   </div>
                 </div>
               ))}

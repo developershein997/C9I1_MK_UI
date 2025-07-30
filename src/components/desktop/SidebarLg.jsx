@@ -84,7 +84,7 @@ const SidebarLg = ({ show, onClose }) => {
       )}
       {/* Sidebar Drawer */}
       <div className={`fixed top-0 right-0 h-full w-80 max-w-full bg-[#181c2f] z-50 transition-transform duration-300 ${show ? 'translate-x-0' : 'translate-x-full'} flex flex-col`}>
-        <div className="flex items-center justify-end p-4 border-b border-gray-700">
+        <div className="flex items-center justify-end p-1 border-b border-gray-700">
           <button
             className="text-2xl text-white hover:bg-white/10 rounded-full p-2"
             onClick={onClose}
@@ -93,7 +93,7 @@ const SidebarLg = ({ show, onClose }) => {
             &times;
           </button>
         </div>
-        <div className="flex-1 overflow-y-auto flex flex-col items-center gap-4 p-4">
+        <div className="flex-1 overflow-y-auto flex flex-col items-center gap-2 ps-2 pe-2 mt-2">
           <Link to={'/information?tab=profile'} onClick={onClose} className="flex items-center gap-3 w-full">
             <img src={profile} className="w-10 h-10 rounded-full" alt="Profile" />
             <span className="text-white font-semibold text-lg">{user?.name}</span>
@@ -114,7 +114,7 @@ const SidebarLg = ({ show, onClose }) => {
               </Link>
             ))}
           </div>
-          <div className="grid grid-cols-2 gap-4 mt-3 mb-3 justify-items-center">
+          <div className="grid grid-cols-2 gap-2 mt-1 mb-1 justify-items-center">
             {contacts && contacts.map((contact, index) => (
                 <Link to="/contact" key={index} onClick={onClose}>
                   <img
@@ -125,7 +125,7 @@ const SidebarLg = ({ show, onClose }) => {
                 </Link>
             ))}
           </div>
-          <div className="flex justify-center my-4">
+          <div className="flex justify-center ">
             <a href='https://ponewine20x.xyz/assets/app/bossi.apk' target='_blank' rel="noreferrer" className="inline-block text-center border border-white px-4 py-2 rounded-full text-white no-underline font-semibold hover:bg-white hover:text-gray-900 transition-colors duration-200">
               Download App
             </a>
@@ -133,7 +133,7 @@ const SidebarLg = ({ show, onClose }) => {
 
           <button
               onClick={handleLogout}
-              className="w-full py-4 bg-red-600 hover:bg-red-700 text-white font-bold text-lg rounded-b-xl transition-colors mt-auto mb-10"
+              className="w-full py-2 bg-red-600 hover:bg-red-700 text-white font-bold text-lg rounded-b-xl transition-colors mt-3 mb-15"
           >
             {loading ? <span className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></span> : null}
             {content?.profile?.logout?.toUpperCase()}
