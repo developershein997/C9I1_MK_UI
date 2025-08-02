@@ -6,6 +6,7 @@ import { AuthContextProvider } from "../contexts/AuthContext";
 import { GeneralContextProvider } from "../contexts/GeneralContext";
 import { GameContextProvider } from "../contexts/GameContext";
 import BottomMenu from "../components/mobile/BottomMenu";
+import AdsBanner from "./AdsBanner";
 
 const Layout = () => {
   return (
@@ -14,6 +15,7 @@ const Layout = () => {
         <GameContextProvider>
           <Toaster />
           <div className="flex flex-col min-h-screen bg-[#101223]">
+            <AdsBanner />
             <NavBar />
             <main className="flex-1 w-full max-w-6xl mx-auto px-2 sm:px-4 pt-2 pb-10">
               <Outlet />

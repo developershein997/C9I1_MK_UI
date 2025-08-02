@@ -34,7 +34,7 @@ const Login = ({ show, handleClose }) => {
 
   return (
     // Custom Modal Overlay (replaces react-bootstrap Modal)
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 backdrop-blur-sm" style={{backgroundColor: 'rgba(0,0,0,0.7)'}}>
       {/* Modal Content */}
       <div className="bg-[#212121] p-8 rounded-2xl w-full max-w-md text-white shadow-2xl border border-gray-700 relative">
         {/* Close Button */}

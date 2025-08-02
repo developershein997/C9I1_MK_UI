@@ -91,12 +91,12 @@ const InformationPage = () => {
               </h1>
             </div>
             <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto">
-              Manage your profile, transfer funds, and view your transaction history
+              {/* Manage your profile, transfer funds, and view your transaction history */}
             </p>
           </div>
 
           {/* Tab Navigation */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 sm:mb-8">
+          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 sm:mb-8">
             {tabs.map((tabItem) => (
                 <div
                     key={tabItem.id}
@@ -134,7 +134,7 @@ const InformationPage = () => {
                   </div>
                 </div>
             ))}
-          </div>
+          </div> */}
 
           {/* Active Tab Content */}
           <div className="relative">

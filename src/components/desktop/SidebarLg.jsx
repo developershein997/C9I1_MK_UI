@@ -56,7 +56,7 @@ const SidebarLg = ({ show, onClose }) => {
 
   const navLinks = [
     { img: home, name: content?.nav?.home?.toUpperCase(), link: '/?type=all' },
-    { img: titok, name: content?.nav?.videos?.toUpperCase(), link: '/reels' },
+    { img: titok, name: content?.nav?.videos?.toUpperCase(), link: '/ads-video?tab=AdsVideo' },
     { img: profile, name: content?.profile?.my_profile?.toUpperCase(), link: '/information?tab=profile' },
     { img: money, name: content?.wallet?.wallet?.toUpperCase(), link: '/information?tab=transfer' },
     { img: log, name: content?.nav?.logs?.toUpperCase(), link: '/information?tab=logs&type=deposit' },

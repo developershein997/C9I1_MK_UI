@@ -69,9 +69,9 @@ const Promotion = () => {
               {content?.nav?.promotion || 'Promotions'}
             </h1>
           </div>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+          {/* <p className="text-gray-300 text-lg max-w-2xl mx-auto">
             Discover amazing offers, bonuses, and exclusive rewards designed just for you!
-          </p>
+          </p> */}
     </div>
 
         {/* Promotions Grid */}
@@ -99,10 +99,10 @@ const Promotion = () => {
                         {item.title}
                       </h3>
                     </div>
-                    <div className="flex items-center gap-2 text-gray-400">
+                    {/* <div className="flex items-center gap-2 text-gray-400">
                       <FaClock className="text-sm" />
                       <span className="text-sm">Limited Time</span>
-                    </div>
+                    </div> */}
                   </div>
 
                   {/* Image */}
@@ -124,8 +124,8 @@ const Promotion = () => {
                   </div>
 
                   {/* Action Button */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4 text-sm text-gray-400">
+                  <div className="flex items-center justify-center">
+                    {/* <div className="flex items-center gap-4 text-sm text-gray-400">
                       <div className="flex items-center gap-1">
                         <FaUsers className="text-yellow-400" />
                         <span>Active Users</span>
@@ -134,7 +134,7 @@ const Promotion = () => {
                         <FaCalendarAlt className="text-green-400" />
                         <span>Valid Now</span>
                       </div>
-                    </div>
+                    </div> */}
                     
                     <button 
                       onClick={() => setSelectedPromotion(item)}
@@ -156,7 +156,7 @@ const Promotion = () => {
         </div>
 
         {/* Additional Info Section */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-gradient-to-br from-[#181A29] to-[#1f2338] rounded-2xl p-6 text-center border border-gray-700/50 hover:border-yellow-400/30 transition-all duration-300">
             <div className="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <FaGift className="text-yellow-400 text-xl" />
@@ -180,7 +180,7 @@ const Promotion = () => {
             <h3 className="text-white font-semibold mb-2">For Everyone</h3>
             <p className="text-gray-400 text-sm">Promotions available for all users</p>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Modal for Promotion Details */}
@@ -207,16 +207,16 @@ const Promotion = () => {
               {selectedPromotion.description}
             </p>
             
-            <div className="flex gap-4">
+            <div className="flex justify-center">
               <button 
                 onClick={() => setSelectedPromotion(null)}
                 className="flex-1 bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300"
               >
                 Close
               </button>
-              <button className="flex-1 bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black px-6 py-3 rounded-xl font-semibold transition-all duration-300">
+              {/* <button className="flex-1 bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black px-6 py-3 rounded-xl font-semibold transition-all duration-300">
                 Claim Offer
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

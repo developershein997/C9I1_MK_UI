@@ -120,7 +120,7 @@ const Deposit = () => {
       </form>
 
       {show && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 animate-fadeIn">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-opacity-60 animate-fadeIn" style={{backgroundColor: 'rgba(0,0,0,0.7)'}}>
           <div className="bg-white rounded-2xl shadow-2xl p-4 w-full max-w-xs relative">
             <div className="text-center mb-4">
               <h5 className="font-bold text-lg text-yellow-600">{content?.wallet?.choose_bank}</h5>
